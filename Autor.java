@@ -1,29 +1,23 @@
-public abstract class ItemBiblioteca {
-    private int id;
-    private String titulo;
+public class Autor extends ItemBiblioteca {
+    private String biografia;
 
-    public ItemBiblioteca(int id, String titulo) {
-        this.id = id;
-        this.titulo = titulo;
+    public Autor(int id, String titulo, String biografia) {
+        super(id, titulo);
+        this.biografia = biografia;
     }
 
-    public ItemBiblioteca() {}
+    public Autor() {}
 
-    public int getId() {
-        return id;
+    public String getBiografia() {
+        return biografia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBiografia(String biografia) {
+        this.biografia = biografia;
     }
 
-    public String getTitulo() {
-        return titulo;
+    @Override
+    public void exibirDetalhes() {
+        System.out.println("Autor [ID: " + getId() + ", Nome: " + getTitulo() + ", Biografia: " + biografia + "]");
     }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public abstract void exibirDetalhes();
 }
